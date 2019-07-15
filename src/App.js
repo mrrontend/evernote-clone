@@ -1,4 +1,8 @@
 import React, { Component } from "react";
+import Editor from "./components/textEditor/Editor";
+import SideNav from "./components/sideNav/SideNav";
+import SideNavItem from "./components/sideNavItem/SideNavItem";
+import "./App.css";
 
 const firebase = require("firebase");
 
@@ -11,6 +15,16 @@ export default class App extends Component {
       notes: null
     };
   }
+
+  render() {
+    return (
+      <div className="app-container">
+        <SideNav />
+        <Editor />
+      </div>
+    );
+  }
+
   componentDidMount = () => {
     firebase
       .firestore()
@@ -25,7 +39,4 @@ export default class App extends Component {
         this.setState({ notes: notes });
       });
   };
-  render() {
-    return <div>App</div>;
-  }
 }
