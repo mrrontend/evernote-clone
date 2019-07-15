@@ -42,4 +42,6 @@ export default class App extends Component {
         this.setState({ notes: notes });
       });
   };
+  selectNote = (note, index) =>
+    this.setState({ selectedNoteIndex: index, selectedNote: note });
 }
