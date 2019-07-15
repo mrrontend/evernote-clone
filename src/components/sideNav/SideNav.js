@@ -69,7 +69,7 @@ class SideNav extends Component {
     this.props.newNote(this.state.title);
     this.setState({ title: null, addingNote: false });
   };
-  selectNote = (note, index) => this.props.selectNote(n, i);
+  selectNote = (note, index) => this.props.selectNote(note, index);
   deleteNote = note => this.props.deleteNote(note);
 }
 

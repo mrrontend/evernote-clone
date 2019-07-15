@@ -22,8 +22,18 @@ export default class App extends Component {
         <SideNav
           selectedNoteIndex={this.state.selectedNoteIndex}
           notes={this.state.notes}
+          deleteNote={this.deleteNote}
+          selectNote={this.selectNote}
+          newNote={this.newNote}
         />
-        <Editor />
+        {this.state.selectedNote ? (
+          <Editor
+            selectedNote={this.state.selectedNote}
+            selectedNoteIndex={this.state.selectedNoteIndex}
+            notes={this.state.notes}
+            noteUpdate={this.noteUpdate}
+          />
+        ) : null}
       </div>
     );
   }
